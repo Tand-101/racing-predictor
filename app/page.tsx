@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, TrendingUp, Award, BarChart3, RefreshCw, AlertCircle } from 'lucide-react';
 
 // Supabase configuration - REPLACE THESE!
-const SUPABASE_URL = 'PASTE_YOUR_SUPABASE_URL_HERE';
-const SUPABASE_ANON_KEY = 'PASTE_YOUR_ANON_KEY_HERE';
+const SUPABASE_URL = 'https://mmblbouugclrbgkzahfn.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1tYmxib3V1Z2NscmJna3phaGZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NjY2MzQsImV4cCI6MjA4NTU0MjYzNH0.7GgOCIjpay4L9yb49uvjCmEUpTjXqA2M47RLuF2PWFw';
 
 const CheltenhamDashboard = () => {
   const [predictions, setPredictions] = useState([]);
