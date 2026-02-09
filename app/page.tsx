@@ -107,17 +107,19 @@ const CheltenhamDashboard = () => {
     }
   }, [selectedRace]);
 
-  const formatProbability = (prob) => `${(prob * 100).toFixed(1)}%`;
-  const getConfidenceColor = (conf) => {
-    if (conf >= 0.7) return 'text-green-600 bg-green-50';
-    if (conf >= 0.4) return 'text-yellow-600 bg-yellow-50';
-    return 'text-red-600 bg-red-50';
-  };
-  const getConfidenceLabel = (conf) => {
-    if (conf >= 0.7) return 'High';
-    if (conf >= 0.4) return 'Medium';
-    return 'Low';
-  };
+  const formatProbability = (prob: number): string => `${(prob * 100).toFixed(1)}%`;
+
+const getConfidenceColor = (conf: number): string => {
+  if (conf >= 0.7) return 'text-green-600 bg-green-50';
+  if (conf >= 0.4) return 'text-yellow-600 bg-yellow-50';
+  return 'text-red-600 bg-red-50';
+};
+
+const getConfidenceLabel = (conf: number): string => {
+  if (conf >= 0.7) return 'High';
+  if (conf >= 0.4) return 'Medium';
+  return 'Low';
+};
 
   if (loading) {
     return (
