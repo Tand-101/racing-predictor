@@ -1,5 +1,8 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
 import { Calendar, TrendingUp, Award, BarChart3, RefreshCw, AlertCircle } from 'lucide-react';
+;
 
 // Supabase configuration - REPLACE THESE!
 const SUPABASE_URL = 'https://mmblbouugclrbgkzahfn.supabase.co';
