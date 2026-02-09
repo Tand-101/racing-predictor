@@ -71,9 +71,10 @@ const CheltenhamDashboard = () => {
       if (sortedRaces && sortedRaces.length > 0) {
         setSelectedRace(sortedRaces[0]);
       }
-    } catch (err) {
-      setError(err.message);
-    }
+ } catch (err) {
+  setError(err instanceof Error ? err.message : 'An error occurred');
+}
+
   };
 
   // Fetch predictions for selected race
@@ -87,8 +88,8 @@ const CheltenhamDashboard = () => {
       const sorted = data.sort((a, b) => a.predicted_position - b.predicted_position);
       setPredictions(sorted || []);
     } catch (err) {
-      console.error('Error fetching predictions:', err);
-    }
+  setError(err instanceof Error ? err.message : 'An error occurred');
+}
   };
 
   useEffect(() => {
