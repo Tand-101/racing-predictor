@@ -16,7 +16,14 @@ const CheltenhamDashboard = () => {
   const [error, setError] = useState(null);
 
   // Helper function to make Supabase API calls
-  const supabaseQuery = async (table, options = {}) => {
+  const supabaseQuery = async (
+    table: string, 
+    options: {
+      select?: string;
+      filters?: Record<string, any>;
+      order?: { column: string; ascending: boolean } | null;
+    } = {}
+  ): Promise<any[]> => {
     const { select = '*', filters = {}, order = null } = options;
     
     let url = `${SUPABASE_URL}/rest/v1/${table}?select=${encodeURIComponent(select)}`;
