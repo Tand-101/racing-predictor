@@ -61,11 +61,11 @@ const CheltenhamDashboard = () => {
         }
       });
 
-      const sortedRaces = data.sort((a, b) => {
-        const dateA = new Date(`${a.race_date}T${a.race_time || '00:00:00'}`);
-        const dateB = new Date(`${b.race_date}T${b.race_time || '00:00:00'}`);
-        return dateA - dateB;
-      });
+   const sortedRaces = data.sort((a, b) => {
+  const dateA = new Date(`${a.race_date}T${a.race_time || '00:00:00'}`);
+  const dateB = new Date(`${b.race_date}T${b.race_time || '00:00:00'}`);
+  return dateA.getTime() - dateB.getTime();
+});
 
       setRaces(sortedRaces || []);
       if (sortedRaces && sortedRaces.length > 0) {
