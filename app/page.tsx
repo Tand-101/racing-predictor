@@ -9,11 +9,11 @@ const SUPABASE_URL = 'https://mmblbouugclrbgkzahfn.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1tYmxib3V1Z2NscmJna3phaGZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NjY2MzQsImV4cCI6MjA4NTU0MjYzNH0.7GgOCIjpay4L9yb49uvjCmEUpTjXqA2M47RLuF2PWFw';
 
 const CheltenhamDashboard = () => {
-  const [predictions, setPredictions] = useState([]);
-  const [races, setRaces] = useState([]);
-  const [selectedRace, setSelectedRace] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [predictions, setPredictions] = useState<any[]>([]);
+  const [races, setRaces] = useState<any[]>([]);
+  const [selectedRace, setSelectedRace] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   // Helper function to make Supabase API calls
   const supabaseQuery = async (
