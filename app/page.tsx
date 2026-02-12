@@ -52,9 +52,11 @@ const CheltenhamDashboard = () => {
   };
 
   // Fetch Cheltenham races
-  const fetchRaces = async () => {
-    try {
-      const data = await supabaseQuery('races', {
+ const fetchRaces = async () => {
+  try {
+    console.log('Fetching from:', SUPABASE_URL);
+    
+    const data = await supabaseQuery('races', {
         select: '*,courses(name)',
         filters: {
           'race_date': { operator: 'gte', value: '2026-03-10' },
