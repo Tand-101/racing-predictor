@@ -83,7 +83,7 @@ const CheltenhamDashboard = () => {
   const fetchPredictions = async (raceId: string) => {
     try {
       const data = await supabaseQuery('cheltenham_2026_predictions', {
-        select: '*,horses(name),race_entries!inner(official_rating,starting_price_decimal,jockeys(name),trainers(name))',
+       select: '*,horses(name),race_entries(official_rating,starting_price_decimal,jockeys(name),trainers(name))',
         filters: { 'race_id': raceId }
       });
 
