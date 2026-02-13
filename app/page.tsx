@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, TrendingUp, Award, BarChart3, RefreshCw, AlertCircle, Trophy, Crown } from 'lucide-react';
 
 // Supabase configuration - REPLACE WITH YOUR ACTUAL VALUES
-const SUPABASE_URL = 'YOUR_SUPABASE_URL_HERE';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';
+const SUPABASE_URL = 'https://racing-predictor-3rf5rhyul-tom-andrews-projects-1e741605.vercel.app/';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1tYmxib3V1Z2NscmJna3phaGZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NjY2MzQsImV4cCI6MjA4NTU0MjYzNH0.7GgOCIjpay4L9yb49uvjCmEUpTjXqA2M47RLuF2PWFw';
 
 const CheltenhamDashboard = () => {
   const [predictions, setPredictions] = useState<any[]>([]);
