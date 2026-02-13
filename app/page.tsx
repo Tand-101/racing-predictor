@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, TrendingUp, Award, BarChart3, RefreshCw, AlertCircle, Trophy, Crown } from 'lucide-react';
 
-// Supabase configuration
-const SUPABASE_URL = 'https://dzxcxolpwfxjzyfqljfn.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR6eGN4b2xwd2Z4anp5ZnFsamZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg5NTg3MzcsImV4cCI6MjA1NDUzNDczN30.0FxcpRhOq4n2FsCyPGxFKcuq9e1MJJvMTojPMPwAOz8';
+// Supabase configuration - REPLACE WITH YOUR ACTUAL VALUES
+const SUPABASE_URL = 'YOUR_SUPABASE_URL_HERE';
+const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';
 
 const CheltenhamDashboard = () => {
   const [predictions, setPredictions] = useState<any[]>([]);
@@ -52,11 +52,9 @@ const CheltenhamDashboard = () => {
   };
 
   // Fetch Cheltenham races
- const fetchRaces = async () => {
-  try {
-    console.log('Fetching from:', SUPABASE_URL);
-    
-    const data = await supabaseQuery('races', {
+  const fetchRaces = async () => {
+    try {
+      const data = await supabaseQuery('races', {
         select: '*,courses(name)',
         filters: {
           'race_date': { operator: 'gte', value: '2026-03-10' },
@@ -83,7 +81,7 @@ const CheltenhamDashboard = () => {
   const fetchPredictions = async (raceId: string) => {
     try {
       const data = await supabaseQuery('cheltenham_2026_predictions', {
-       select: '*,horses(name),race_entries(official_rating,starting_price_decimal,jockeys(name),trainers(name))',
+        select: '*,horses(name),race_entries!inner(official_rating,starting_price_decimal,jockeys(name),trainers(name))',
         filters: { 'race_id': raceId }
       });
 
